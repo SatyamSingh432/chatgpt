@@ -8,13 +8,15 @@ import Community from "./pages/Community";
 function App() {
   return (
     <>
-      <div>
-        <SideBar />
-        <Routes>
-          <Route path="/" element={<ChatBox />} />
-          <Route path="/credits" element={<Credits />} />
-          <Route path="/community" element={<Community />} />
-        </Routes>
+      <div className="dark:bg-gradient-to-b from-[#242124] to-[#000000] dark:text-white">
+        <div className="flex h-screen w-screen">
+          <SideBar />
+          <Routes>
+            <Route path="/" element={<ChatBox />} />
+            <Route path="/credits" element={<Credits />} />
+            <Route path="/community" element={<Community />} />
+          </Routes>
+        </div>
       </div>
     </>
   );
