@@ -11,14 +11,13 @@ export const AppContextProvider = ({ children }) => {
   const [chats, setChats] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
   const fetchUser = async () => {
     setUser(dummyUserData);
   };
 
   const fetchUserChats = async () => {
     setChats(dummyChats);
-    setSelectedChat([0]);
+    setSelectedChat(dummyChats[0]);
   };
 
   useEffect(() => {
@@ -36,6 +35,7 @@ export const AppContextProvider = ({ children }) => {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
   useEffect(() => {
     fetchUser();
